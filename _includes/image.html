@@ -1,0 +1,8 @@
+{% assign raw_src = include.src %}
+{% assign alt_text = site.data.image_alts[raw_src] | default: "Lorem ipsum" %}
+{% if raw_src contains "://" %}
+  {% assign rendered_src = raw_src %}
+{% else %}
+  {% assign rendered_src = raw_src | relative_url %}
+{% endif %}
+<img src="{{ rendered_src }}" alt="{{ alt_text | escape }}" class="{{ include.class | default: 'image-fluid' }}">
