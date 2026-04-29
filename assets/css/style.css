@@ -1,0 +1,325 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Header menu bar */
+
+nav {
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.crumbs ol {
+  padding-left: 0;
+}
+
+.crumb {
+  display: inline-block;
+}
+
+.crumb a::after {
+  color: #000;
+  content: "   ";
+  font-size: 100%;
+  font-weight: bold;
+  padding: 5px 30px;
+}
+
+.headers:hover {
+  color: orange;
+}
+
+.headers {
+  color: black;
+  font-size: 190%;
+  text-decoration: none;
+}
+
+/* On screens less than 900px, make nav links be on top of each other */
+@media screen and (max-width: 900px) {
+  .crumb {
+    display: block;
+    padding: 5px 30px;
+  }
+}
+
+/* Text and image body */
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+/* Image slider */
+
+.slider-frame {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Slide animation */
+
+@keyframes slide_animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(0);
+  }
+
+  15% {
+    transform: translateX(-100%);
+  }
+
+  30% {
+    transform: translateX(-100%);
+  }
+
+  35% {
+    transform: translateX(-200%);
+  }
+
+  50% {
+    transform: translateX(-200%);
+  }
+
+  55% {
+    transform: translateX(-100%);
+  }
+
+  70% {
+    transform: translateX(-100%);
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-images {
+  display: flex;
+  width: 100%;
+  position: relative;
+  animation-name: slide_animation;
+  animation-duration: 45s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+.img-container {
+  flex: 0 0 100%;
+  width: 100%;
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Linked words formatting */
+
+.link {
+  color: black;
+  font-size: 200%;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: orange;
+}
+
+/* Bottom bar */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: orange;
+  opacity: 0.95;
+  color: black;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.left,
+.center,
+.right {
+  flex: 1;
+  text-align: center;
+  font-size: 17px;
+}
+
+.left {
+  text-align: left;
+  margin-left: 5rem;
+}
+
+.right {
+  text-align: right;
+  margin-right: 5rem;
+}
+
+/* Block styling */
+
+.grid-one {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+
+.grid-three {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.grid-item-borderless {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 20px;
+}
+
+.article {
+  padding-right: 155px;
+  padding-left: 155px;
+}
+
+/* Mobile scaling */
+
+@media screen and (max-width: 900px) {
+  .left,
+  .right {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .grid-three {
+    grid-template-columns: auto;
+    padding: 5px;
+  }
+
+  .grid-two {
+    grid-template-columns: auto;
+    padding: 5px;
+  }
+
+  .grid-one {
+    padding: 5px;
+  }
+
+  .left,
+  .center,
+  .right {
+    font-size: 14px;
+  }
+
+  .article {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+/* Shared Jekyll layout helpers */
+
+.site-main {
+  padding-bottom: 4rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.image-fluid {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grid-item--text {
+  font-size: 17px;
+}
+
+.text-small {
+  font-size: 15px;
+}
+
+.grid--centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.project-title {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  line-height: normal;
+}
+
+.project-title .link {
+  font-size: 200%;
+}
+
+.content-spacer {
+  height: 1.2em;
+}
+
+.content-spacer--large {
+  height: 2.4em;
+}
+
+.read-more {
+  text-decoration: none;
+  color: orange;
+}
+
+.action-link {
+  font-weight: bold;
+}
+
+.action-link--small {
+  font-size: 16px;
+}
+
+.action-link--large {
+  font-size: 20px;
+}
