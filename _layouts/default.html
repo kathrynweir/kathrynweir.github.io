@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="author" content="{{ site.author }}">
+    <link rel="icon" href="{{ '/solar.png' | relative_url }}" sizes="32x32">
+    <link rel="icon" href="{{ '/solar.png' | relative_url }}" sizes="64x64">
+    <link rel="icon" href="{{ '/solar.png' | relative_url }}" sizes="96x96">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <title>{% if page.title and page.title != site.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  </head>
+  <body>
+    {% include nav.html %}
+    <main class="site-main">
+      <h1 class="visually-hidden">{{ page.heading | default: page.title | default: site.title }}</h1>
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
