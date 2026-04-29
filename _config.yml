@@ -1,0 +1,13 @@
+title: Kathryn Weir
+description: Kathryn Weir is a curator and writer based in Paris.
+keywords: curator, GOMA, MADRE, Centre Pompidou, Cosmopolis, Rethinking Nature
+author: Kathryn Weir
+email: kathryn_weir@proton.me
+year: 2024
+
+# Leave baseurl empty for a user/organization site such as https://username.github.io.
+# If you publish as a project site, set baseurl to "/repository-name".
+baseurl: ""
+url: ""
+
+markdown: kramdown
